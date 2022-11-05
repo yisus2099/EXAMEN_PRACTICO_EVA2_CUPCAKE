@@ -7,6 +7,7 @@ package programa_1_arbol_binario;
 public class ArbolBinario {
 
     private Nodo root;
+    private int nodos;
 
     public ArbolBinario() {
         this.root = null;
@@ -46,12 +47,13 @@ public class ArbolBinario {
 
     private void inOrderRecu(Nodo nodo) {
         if (nodo != null) {
+            int i=0;
             inOrderRecu(nodo.getIzquierdo());
            System.out.print(nodo.getValor() + " - ");
             inOrderRecu(nodo.getDerecho());
         }
     }
-
+    
     public void preOrder() {
         preOrderRecu(root);
         System.out.println("");
@@ -77,4 +79,31 @@ public class ArbolBinario {
             System.out.print(nodo.getValor() + " - ");
         }
     }
+    
+    public int numeroNodos(){
+        nodos =0;
+        numeroNodosRecu(root);
+        return nodos;
+    }
+    
+    private void  numeroNodosRecu(Nodo recorrido) {
+        if (recorrido != null) {
+            nodos ++;
+            numeroNodosRecu(recorrido.getIzquierdo());
+            numeroNodosRecu(recorrido.getDerecho());
+        }
+    }
+    
+     public void arbolAListaInOrder(Lista lista){
+       arbolAListaInOrderRecu(root, lista);
+   }
+     
+    private void arbolAListaInOrderRecu (Nodo nodo, Lista lista) {
+        if (nodo != null) {
+            arbolAListaInOrderRecu(nodo.getIzquierdo(), lista);
+           lista.agregar(nodo.getValor());
+          arbolAListaInOrderRecu(nodo.getDerecho(), lista);
+        }
+    }
+
 }
