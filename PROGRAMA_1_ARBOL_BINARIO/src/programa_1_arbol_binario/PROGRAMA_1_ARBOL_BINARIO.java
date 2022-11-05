@@ -1,6 +1,8 @@
 
 package programa_1_arbol_binario;
 
+import java.util.Scanner;
+
 /**
  *
  * @author CUPCAKE
@@ -10,21 +12,21 @@ public class PROGRAMA_1_ARBOL_BINARIO {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        int num = 0;
+        String datos;
         ArbolBinario arbolBinario = new ArbolBinario();
+        Lista lista = new Lista();
         
-        arbolBinario.Agregar("a");
-        arbolBinario.Agregar("b");
-         arbolBinario.Agregar("d");
-        arbolBinario.Agregar("g");
-        arbolBinario.Agregar("e");
-        arbolBinario.Agregar("h");
-        arbolBinario.Agregar("i");
-        arbolBinario.Agregar("c");
-        arbolBinario.Agregar("f");
-        arbolBinario.Agregar("j");
-        arbolBinario.Agregar("k");
+        System.out.println("Bienvenido, ¿Cuantas palabras quieres introducir?");
+        num = input.nextInt();
+        for (int i = 0; i < num; i++) {
+            System.out.print("Ingresa palabra: ");
+            datos = input.next();
+            arbolBinario.Agregar(datos);
+        }
 
 
 
@@ -35,8 +37,13 @@ public class PROGRAMA_1_ARBOL_BINARIO {
         System.out.println("Pos order");
         arbolBinario.postOrder();
         
-        
-        
-    }
-    
+        System.out.println("Número de nodos: " + arbolBinario.numeroNodos());
+        System.out.println("");
+      
+        System.out.println("Lista guardada en In order: ");
+        arbolBinario.arbolAListaInOrder(lista);
+        lista.imprimir();
+      
+
+}
 }
