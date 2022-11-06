@@ -3,7 +3,7 @@ package programa_1_arbol_binario;
 
 /**
  *s
- * @author Jesús Alejandro Torres Ramírez
+ * @author CUPCAKE
  */
 public class NodoLista {
     private String valor;
