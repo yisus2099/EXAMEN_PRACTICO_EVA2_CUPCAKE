@@ -1,4 +1,3 @@
-
 package programa_1_arbol_binario;
 
 import java.util.Scanner;
@@ -19,7 +18,7 @@ public class PROGRAMA_1_ARBOL_BINARIO {
         String datos;
         ArbolBinario arbolBinario = new ArbolBinario();
         Lista lista = new Lista();
-        
+
         System.out.println("Bienvenido, ¿Cuantas palabras quieres introducir?");
         num = input.nextInt();
         for (int i = 0; i < num; i++) {
@@ -28,22 +27,17 @@ public class PROGRAMA_1_ARBOL_BINARIO {
             arbolBinario.Agregar(datos);
         }
 
-
-
         System.out.println("Pre order");
         arbolBinario.preOrder();
-                System.out.println("In order: ");
+        System.out.println("In order: ");
         arbolBinario.inOrder();
         System.out.println("Pos order");
         arbolBinario.postOrder();
-        
-        System.out.println("Número de nodos: " + arbolBinario.numeroNodos());
         System.out.println("");
-      
+
         System.out.println("Lista guardada en In order: ");
         arbolBinario.arbolAListaInOrder(lista);
         lista.imprimir();
-      
 
-}
+    }
 }

@@ -38,7 +38,7 @@ public class Lista {
             NodoLista temp = inicio;
             //Mover temp hasta que llegue al nodo final
             while (temp != null) { 
-                System.out.print( temp.getValor() + " - ");
+                System.out.print( "[" + temp.getValor() + "] ");
                 temp = temp.getSiguiente();  
             }
         }

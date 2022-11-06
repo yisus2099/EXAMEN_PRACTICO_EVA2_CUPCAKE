@@ -49,7 +49,7 @@ public class ArbolBinario {
         if (nodo != null) {
             int i=0;
             inOrderRecu(nodo.getIzquierdo());
-           System.out.print(nodo.getValor() + " - ");
+           System.out.print("[" + nodo.getValor() + "] ");
             inOrderRecu(nodo.getDerecho());
         }
     }
@@ -61,7 +61,7 @@ public class ArbolBinario {
 
     private void preOrderRecu(Nodo nodo) {
         if (nodo != null) {
-            System.out.print(nodo.getValor() + " - ");
+            System.out.print("[" + nodo.getValor() + "] ");
             preOrderRecu(nodo.getIzquierdo());
             preOrderRecu(nodo.getDerecho());
         }
@@ -76,7 +76,7 @@ public class ArbolBinario {
         if (nodo != null) {
             postOrderRecu(nodo.getIzquierdo());
             postOrderRecu(nodo.getDerecho());
-            System.out.print(nodo.getValor() + " - ");
+            System.out.print("[" + nodo.getValor() + "] ");
         }
     }
     
@@ -94,6 +94,7 @@ public class ArbolBinario {
         }
     }
     
+    //Método para guar en lista InOrder
      public void arbolAListaInOrder(Lista lista){
        arbolAListaInOrderRecu(root, lista);
    }
